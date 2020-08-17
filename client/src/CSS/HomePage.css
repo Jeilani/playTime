@@ -1,0 +1,107 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+
+.HomePage{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+    .navigationsidebar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        min-width: 18%;
+        height: 100%;
+        box-sizing: border-box;
+        padding-bottom: 10%;
+        list-style: none;
+        background: rgb(23,92,103);
+        background: linear-gradient(0deg, rgba(23,92,103,1) 0%, rgba(20,62,75,1) 4%, rgba(16,29,45,1) 17%);
+        color: rgb(88, 175, 233);
+    }
+    .maincontent{
+        min-width: 82%;
+        height: 100%;
+        background: rgba(23,92,103,1);
+        overflow-y: scroll;
+    }
+
+    .profileimage{
+        width: 80px;
+        border-radius: 50%;
+        border: 2px solid rgb(88, 175, 233);
+    }
+
+    .navigationsidebar li{
+        width: 70%;
+        display: flex;
+        justify-content: flex-start;
+        transition-duration: .75s;
+    }
+
+    .wordicon{
+        margin-left: 10px;
+    }
+
+    .navigationsidebar li:hover {
+        transform: translateX(20px);
+        transition-duration: .75s;
+    }
+
+    .selectednav{
+        background-color: black;
+    }
+
+        .homeloadingiconcontainer{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .homeloadingicon{
+                -webkit-animation-name: rotate;
+                animation-name: rotate;
+        -webkit-animation-duration: .5s;
+                animation-duration: .5s;
+        -webkit-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+                animation-timing-function: linear;
+            }
+
+        @-webkit-keyframes rotate {
+            from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+            to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+        }
+
+        @keyframes rotate {
+            from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+            to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+        }
+
+@media only screen and (max-width: 600px) {
+    .navigationsidebar li{
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        transition-duration: .75s;
+    }
+    .wordicon{
+        display: none;
+        justify-content: center;
+    }
+    .profileimage{
+        width: 50px;
+    }
+}

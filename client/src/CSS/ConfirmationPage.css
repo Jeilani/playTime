@@ -1,0 +1,157 @@
+.mapconfirmationcontainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .75);
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+}
+    .mapconfirmationcontainer .fa-times-circle{
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 2rem;
+        color: black;
+        transition-duration: .5s;
+    }
+        .mapconfirmationcontainer .fa-times-circle:hover{
+            color: rgb(138, 56, 42);
+            transition-duration: .5s;
+        }
+    .confirmationpopup{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10%;
+        border-radius: 2px;
+        position: relative;
+        overflow-y: scroll;
+    }
+    .confirmationpopupfriends{
+        background-color: white;
+        display: flex;
+        align-items: center;
+        border-radius: 2px;
+        position: relative;
+        height: 70vh;
+        width: 50vw;
+        padding: 5%;
+        flex-direction: column;
+        justify-content: flex-start;
+        box-sizing: border-box;
+
+    }
+        .confirmationpopupfriends h3{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            height: 10%;
+        }
+        .confirmationpopupfriends .friendscontainer{
+            display: flex;
+            height: 90%;
+            width: 100%;
+        }
+        .friendsListElements{
+            width: 50%;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .friendsListElements p{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 10%;
+        }
+        .friendsListElements .itemscontainer{
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            width: 100%;
+            height: 90%;
+            overflow-y: scroll;
+        }
+            .eachfrienditem{
+                display: flex;
+                font-size: 10px;
+                justify-content: space-evenly;
+                min-height: 70px;
+                width: 100%;
+                border-bottom: 1px solid;
+                border-image-slice: 1;
+                border-image-source: linear-gradient(to left, #ffffff, #58AFE9, #ffffff);
+            }
+                .eachfrienditem .imagecontainer{
+                    width: 33%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                    .eachfrienditem img{
+                        border-radius: 50%;
+                        height: 20px;
+                    }
+                .eachfrienditem p{
+                    width: 33%;
+                    display: flex;
+                    justify-content: center;
+                }
+                .eachfrienditem i{
+                    font-size: 20px;
+                    width: 33%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition-duration: .5s;
+                }
+                    .eachfrienditem i:hover{
+                        color: rgb(87, 146, 235);
+                        transition-duration: .5s;
+                    }
+
+        .confirmationpopup button, .submitbutton{
+            border: none;
+            padding: 10px;
+            transition-duration: .75s;
+            border-radius: 5px;
+            margin: 8px;
+        }
+        .confirmationpopup button:hover, .submitbutton:hover{
+            background-color: rgb(87, 146, 235);
+            transition-duration: .75s;
+        }
+    .secondconfirmationpopup{
+        box-sizing: border-box;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10% 5% 10%;
+        padding-top: 50px;
+        border-radius: 2px;
+        z-index: 20;
+        position: relative;
+        text-align: center;
+    }
+        .parkphoto{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+        }
+
+@media only screen and (max-width: 800px) {
+    .secondconfirmationpopup{
+        padding: none;
+        height: 80%;
+        width: 90%;
+    }
+}

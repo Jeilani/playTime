@@ -1,0 +1,49 @@
+.picksportpage{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 7%;
+
+}
+    .sports{
+        display: flex;
+        min-width: 400px;
+        height: 250px;
+        margin: 20px;
+        justify-content: center;
+        align-items: center;
+        opacity: 50%;
+        transition-duration: .5s;
+        border-radius: 5px;
+        color: white;
+        font-size: 1.1rem;
+    }
+        .sports:hover{
+            opacity: 100%;
+            transition-duration: .5s;
+        }
+        .basketball{
+            background: url("../images/basketballcover2.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .football{
+            background: url("../images/footballcover.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .soccer{
+            background: url("../images/soccercover.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .hiking{
+            background: url("../images/hikingcover.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .baseball{
+            background: url("../images/baseballcover.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }

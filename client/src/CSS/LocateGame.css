@@ -1,0 +1,122 @@
+.backarrow{
+    position: absolute;
+    top: 2vh;
+    left: 0;
+    transition-duration: 1s;
+}
+
+.backarrow:hover{
+    color: gray;
+    transition-duration: 1s;
+}
+.infowindow{
+    background-color: white;
+    border-radius: 20px;
+    padding: 5%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+    .infowindow p {
+        font-size: 12px;
+    }
+
+.mapsidebar {
+    background-color: rgb(199, 196, 196);
+    position: absolute;
+    padding: 20px;
+    padding-right: 20px;
+    padding-top: 10vh;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.locate {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    background: none;
+    border: none;
+    z-index: 10;
+    width: 30px;
+    cursor: pointer;
+    color: rgb(165, 65, 65);
+    transition-duration: .5s;
+    font-size: 3rem;
+}
+
+.locate:hover{
+    color: rgba(165, 65, 65, 0.616);
+    transition-duration: .5s;
+}
+
+.maploadingiconcontainer{
+    position: absolute;
+    height: 100vh;
+    width: 80vw;
+    top:0;
+    left: 20vw;
+    background-color: rgb(23,92,103);
+    z-index: 1999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .maploadingicon{
+        z-index: 22222;
+        -webkit-animation-name: rotate;
+        animation-name: rotate;
+-webkit-animation-duration: .5s;
+        animation-duration: .5s;
+-webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+-webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+
+@-webkit-keyframes rotate {
+    from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+
+@keyframes rotate {
+    from {-webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
+}
+
+@media only screen and (max-width: 1000px) {
+    .mapsidebar{
+        position: absolute;
+        top: 80vh;
+        left: 0;
+        height: 20vh;
+        width: 100vw;
+        overflow-y: scroll;
+        font-size: 1rem;
+        padding-top: 10px;
+    }
+
+    .backarrow{
+        position: absolute;
+        top: 85vh;
+        left: 0;
+        transition-duration: 1s;
+    }
+    .actualmap{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 80vh;
+    }
+}

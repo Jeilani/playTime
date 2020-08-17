@@ -1,0 +1,17 @@
+{
+  "name": "playTime",
+  "version": "1.0.0",
+  "description": "An app that will allow you to find the nearest scheduled games for your sport. It will also allow you to login and set up a time and date for a basketball session",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeilani Mohamed",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.15",
+    "redux-thunk": "^2.3.0"
+  }
+}

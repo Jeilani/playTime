@@ -1,0 +1,71 @@
+.searchfriendpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 7%;
+    height: 100%;
+    box-sizing: border-box;
+    transition-duration: .5s;
+}
+    .searchbox{
+        display: flex;
+        width: 80%;
+        height: 20%;
+        justify-content: center;
+    }
+        .searchbox input{
+            width: 300px;
+            height: 80px;
+            background-color: rgba(23,92,103,1);
+            font-size:  2rem;
+            border-bottom: 1px solid;
+            border-top: none;
+            border-image-slice: 1;
+            border-image-source: linear-gradient(to left, #175C67, #58AFE9, #175C67);
+            color: black;
+        }
+        .searchbox i{
+            font-size: 2rem;
+        }
+
+
+/*Clicked area
+//////////////////
+///////
+
+
+*/
+.clickedsearchbox{
+    display: flex;
+    width: 80%;
+    height: 20%;
+    justify-content: center;
+    animation-name: moveUp;
+    animation-duration: .2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    transform: translateY(-200px)
+}
+    .clickedsearchbox input{
+        width: 300px;
+        height: 80px;
+        background-color: rgba(23,92,103,1);
+        font-size:  2rem;
+        border-bottom: 1px solid;
+        border-top: none;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to left, #175C67, #58AFE9, #175C67);
+        color: black;
+    }
+    .clickedsearchbox i{
+        font-size: 2rem;
+    }
+
+input:active, input:focus{
+    outline: 1px solid rgba(23,92,103,1);
+}
+@keyframes moveUp {
+    from {transform: translateY(0);}
+    to {transform: translateY(-200px);}
+}

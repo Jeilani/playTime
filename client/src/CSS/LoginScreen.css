@@ -1,0 +1,85 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.LoginScreen{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: url("../images/ParkBasketball.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.LoginScreen h1, .LoginScreen h2 {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+
+}
+
+.LoginScreen form{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.LoginScreen input{
+    margin: 5px;
+}
+
+.LoginScreen input{
+    opacity: 60%;
+    border: 0;
+    height: 20px;
+    border-radius: 2px;
+    -webkit-transition-duration: 0.5s;
+         -o-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+}
+
+input:hover{
+    opacity: 100%;
+    -webkit-transition-duration: 0.5s;
+         -o-transition-duration: 0.5s;
+            transition-duration: 0.5s;
+}
+
+.loginbutton{
+    border: none;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.loginbutton:hover {
+    -webkit-transition-duration: .5s;
+         -o-transition-duration: .5s;
+            transition-duration: .5s;
+    background-color: rgb(235, 188, 118);
+    color: gray;
+}

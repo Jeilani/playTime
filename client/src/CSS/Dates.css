@@ -1,0 +1,61 @@
+.Dates{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 50%;
+    justify-content: center;
+
+}
+.alldates{
+    width: 100%;
+    display: flex;
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.alldatesclicked{
+    background-color: rgb(134, 62, 62);
+    color: white;
+    border: none;
+}
+
+.individualdate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    border-radius: 50%;
+    font-size: .5rem;
+    height: 50px;
+    padding: 10px;
+    transition-duration: .5s;
+    background-color: rgb(209, 209, 209);
+}
+    .individualdate .day{
+        font-size: 8px;
+        font-weight: bold;
+    }
+    .individualdate .datenumber{
+        color: red;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+
+.individualdate:hover{
+    transform: scale(.9);
+    transition-duration: .5s;
+}
+
+.reddate{
+    background-color: black;
+    transform: scale(.8);
+    color: white;
+
+}
+
+.reddate:hover{
+    transform: scale(.8);
+}
