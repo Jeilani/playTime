@@ -1,18 +1,24 @@
 import React from "react"
 import {useSelector, useDispatch} from "react-redux"
 import {renderWeekday, renderMonth } from "../../../functions"
-import "../../../CSS/ConfirmationPage.css"
 
 const SecondPopUp = ({pickedFriend, setWhichPopUp, setPickedFriend, editedGames, setEditedGames}) => {
     const gamesScheduled = useSelector(state=>state.gamesScheduled)
     const dispatch = useDispatch()
-    const addUserToGame = game => {
+    const toggleUserToEditedGames = game => {
+        if (isGameInEditedGames(game)){
+            console.log("friend is in game")
+            setEditedGames(prevGames=>{
+                return [...prevGames.filter(individualgame=>!(individualgame.gameID === game.gameID))]
+            })
+        } else {
         const newInviteList = [...game.friendsInvited, pickedFriend]
-        const editedGame = {
-            ...game,
-            friendsInvited: newInviteList
-        }
-        setEditedGames(prevGames=>[...prevGames, editedGame])
+            const editedGame = {
+                ...game,
+                friendsInvited: newInviteList
+            }
+            setEditedGames(prevGames=>[...prevGames, editedGame])
+    }
     }
     const submitInvites = () => {
         editedGames.forEach(eachGame=>{
@@ -37,11 +43,14 @@ const SecondPopUp = ({pickedFriend, setWhichPopUp, setPickedFriend, editedGames,
         })
         return returnvalue
     }
-    const gamesScheduledMap = gamesScheduled.filter(eachGame=>!isFriendInGame(eachGame.friendsInvited)).map(eachGame=>{
-        return (
-                <div className={`${isGameInEditedGames(eachGame)? 'clickedGame': 'alldates'}`} onClick={()=>{addUserToGame(eachGame)}} key={eachGame.lat} className="eachgame"><span className="eachgamesport">{eachGame.sport}</span> activity scheduled at <span className="eachgamelocation">{eachGame.name}</span> on <span className="eachgamedate">{renderWeekday(eachGame.date.getDay())}, {renderMonth(eachGame.date.getMonth())} {eachGame.date.getDate()}</span></div>
-        )
-    })
+    const renderGames = eachGame => {
+        if (!isGameInEditedGames(eachGame)){
+        return (<div className={`eachgame alldates ${isGameInEditedGames(eachGame)? 'clickedGame': ''}`} key={eachGame.lat} > <i onClick={()=>{toggleUserToEditedGames(eachGame)}}className="fas addordeleteicon fa-plus"></i><div className="sentencecontainer"><span className="eachgamesport"> {eachGame.sport} {" "}</span><span>{" activity scheduled at "}</span><span className="eachgamelocation">{eachGame.name}</span> on <span className="eachgamedate">{renderWeekday(eachGame.date.getDay())}, {renderMonth(eachGame.date.getMonth())} {eachGame.date.getDate()}</span></div><span className="checkmark"> </span></div>)
+        } else {
+            return (<div className={`eachgame alldates ${isGameInEditedGames(eachGame)? 'clickedGame': ''}`} key={eachGame.lat} > <i onClick={()=>{toggleUserToEditedGames(eachGame)}} className="fas addordeleteicon fa-minus"></i><div className="sentencecontainer"><span className="eachgamesport">{eachGame.sport + " activity scheduled at "}</span><span className="eachgamelocation">{eachGame.name}</span> on <span className="eachgamedate">{renderWeekday(eachGame.date.getDay())}, {renderMonth(eachGame.date.getMonth())} {eachGame.date.getDate()}</span></div><i className="fas checkmark fa-check"></i></div>)
+        }
+    }
+    const gamesScheduledMap = gamesScheduled.filter(eachGame=>!isFriendInGame(eachGame.friendsInvited)).map(eachGame=>renderGames(eachGame))
 
     return (
         <div className="friendpopupcontainer">

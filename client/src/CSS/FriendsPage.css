@@ -97,32 +97,54 @@
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    width: 100%;
 }
 
     .gamesscheduledcontainer .eachgame{
+        display: flex;
+        width: 70%;
         margin: 5px;
         transition-duration: .5s;
     }
         .gamesscheduledcontainer .eachgame:hover{
-            background-color: rgba(87, 146, 235, 0.445);
+            background-color: rgba(87, 146, 235, 0.171);
             transition-duration: .5s;
         }
+
         .gamesscheduledcontainer .eachgamesport{
             color: blue;
             font-style: italic;
+            margin: 0 2px;
         }
         .gamesscheduledcontainer .eachgamelocation{
             color: green;
+            margin: 0 2px;
         }
+
         .gamesscheduledcontainer .eachgamedate{
             color: red;
+            margin: 0 2px;
         }
 
 .clickedGame{
     background-color: rgba(87, 146, 235, 0.445);
-    transition-duration: .5s;
-    font-size: 3rem;
+    transition-duration: .5s
 }
+    .addordeleteicon{
+        margin-right: 20px;
+        width: 10%;
+    }
+    .eachgame .sentencecontainer{
+        width: 80%;
+    }
+    .eachgame .fa-check{
+        color: green;
+        margin-left: 20px;
+    }
+    .eachgame .checkmark{
+        width: 10%;
+        display: inline;
+    }
 
 .friendpopup .fa-times-circle{
     position: absolute;
@@ -131,6 +153,10 @@
     font-size: 2rem;
     color: black;
     transition-duration: .5s;
+}
+.friendpopup .thirdconfirmationcheck{
+    color: green;
+    margin-top: 20px;
 }
     .friendpopup .fa-times-circle:hover{
         color: rgb(138, 56, 42);
