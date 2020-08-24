@@ -10,44 +10,11 @@
 }
     .searchbox{
         display: flex;
-        width: 80%;
-        height: 20%;
         justify-content: center;
+        align-items: center;
+        transition-duration: .5s;
     }
-        .searchbox input{
-            width: 300px;
-            height: 80px;
-            background-color: rgba(23,92,103,1);
-            font-size:  2rem;
-            border-bottom: 1px solid;
-            border-top: none;
-            border-image-slice: 1;
-            border-image-source: linear-gradient(to left, #175C67, #58AFE9, #175C67);
-            color: black;
-        }
-        .searchbox i{
-            font-size: 2rem;
-        }
-
-
-/*Clicked area
-//////////////////
-///////
-
-
-*/
-.clickedsearchbox{
-    display: flex;
-    width: 80%;
-    height: 20%;
-    justify-content: center;
-    animation-name: moveUp;
-    animation-duration: .2s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-    transform: translateY(-200px)
-}
-    .clickedsearchbox input{
+    .searchbox input{
         width: 300px;
         height: 80px;
         background-color: rgba(23,92,103,1);
@@ -57,15 +24,55 @@
         border-image-slice: 1;
         border-image-source: linear-gradient(to left, #175C67, #58AFE9, #175C67);
         color: black;
+        transition-duration: .5s;
     }
-    .clickedsearchbox i{
+    .searchbox input:active, .searchbox input:focus{
+        outline: none;
+    }
+    .searchbox i{
         font-size: 2rem;
     }
+    .searchfriendpage .results{
+        height: 80%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+    }
+    .clickedsearchbox{
+        width: 80%;
+        height: 20%;
+    }
+    .notclickedsearchbox{
+        width: 80%;
+        height: 100%;
+    }
+        .searchfriendpage .notclickedresults{
+                height: 0;
+                transition-duration: .5s;
+        }
+        .results{
+            overflow-y: scroll;
+            padding: 100px;
+            transition-duration: .5s;
+        }
+        .results .individualresults{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+        }
+            .results img{
+                border-radius: 50%;
+                width: 40px;
+                margin-right: 5px;
+            }
 
-input:active, input:focus{
-    outline: 1px solid rgba(23,92,103,1);
-}
-@keyframes moveUp {
-    from {transform: translateY(0);}
-    to {transform: translateY(-200px);}
+
+@media only screen and (max-width: 800px) {
+    .searchbox i{
+        font-size: 1rem;
+    }
 }
