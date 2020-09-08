@@ -71,9 +71,12 @@ input:hover{
 }
 
 .loginbutton{
-    border: none;
+    display: flex;
+    background-color: rgb(235, 188, 118), .5;
     border-radius: 2px;
     padding: 5px;
+    border: none;
+    justify-content: center;
 }
 
 .loginbutton:hover {
@@ -82,4 +85,8 @@ input:hover{
             transition-duration: .5s;
     background-color: rgb(235, 188, 118);
     color: gray;
+}
+
+a:active{
+    text-decoration: none;
 }

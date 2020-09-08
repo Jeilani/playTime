@@ -17,6 +17,15 @@ export const renderWeekday = num =>{
       }
   }
 
+export const amorpm = date => {
+    if (date.getHours() > 11) {
+        return "PM"
+    } else return "AM"
+}
+export const twelveHourClock = hours => {
+    return hours % 12
+}
+
 export const renderMonth = num => {
 switch (num){
     case 0:
@@ -51,4 +60,24 @@ export const generateID = () => {
   // Convert it to base 36 (numbers + letters), and grab the first 9 characters
   // after the decimal.
   return '_' + Math.random().toString(36).substr(2, 15);
+}
+export const renderDay = num => {
+    switch (num){
+        case 0:
+            return "Sun"
+        case 1:
+            return "Mon"
+        case 2:
+            return "Tues"
+        case 3:
+            return "Wed"
+        case 4:
+            return "Thurs"
+        case 5:
+            return "Fri"
+        case 6:
+            return "Sat"
+        default:
+            return null
+    }
 }

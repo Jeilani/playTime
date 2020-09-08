@@ -2,28 +2,21 @@ import React from 'react';
 import "./CSS/App.css"
 import LoginScreen from "./Components/LoginScreen.js"
 import HomePage from "./Components/HomePage"
-import  Loading from "./Components/Loading.js"
-import { useSelector } from "react-redux"
+import {useSelector} from "react-redux"
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
 const App = () =>{
-  const isLogged = useSelector(state=>state.isLogged)
-  const isLoading = useSelector(state=>state.isLoading)
+    const isLoggedIn = useSelector(state=>state.isLogged)
 
-    if (isLogged && !isLoading){
-      return (
-          <HomePage/>
-
-      )
-    }
-    else if (!isLogged && !isLoading) {
-      return (
-          <LoginScreen/>
-      )
-    } else {
-        return (
-          <Loading/>
-        )
-    }
+    return (
+      <Router>
+        <Switch>
+          <Route path="/" exact render={()=>isLoggedIn?<HomePage/>:<LoginScreen/>}/>
+          <Route path="/login" exact  component={LoginScreen}/>
+          <Route path="/home" exact component={HomePage}/>
+        </Switch>
+      </Router>
+    )
 }
 
 export default App;

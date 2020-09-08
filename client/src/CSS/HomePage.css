@@ -42,7 +42,7 @@
         border: 2px solid rgb(88, 175, 233);
     }
 
-    .navigationsidebar li{
+    .navigationsidebar .linkbutton{
         width: 70%;
         display: flex;
         justify-content: flex-start;
@@ -53,7 +53,7 @@
         margin-left: 10px;
     }
 
-    .navigationsidebar li:hover {
+    .navigationsidebar .linkbutton:hover {
         transform: translateX(20px);
         transition-duration: .75s;
     }
@@ -90,7 +90,7 @@
             to {-webkit-transform: rotate(360deg);transform: rotate(360deg);}
         }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .navigationsidebar li{
         width: 70%;
         display: flex;

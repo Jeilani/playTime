@@ -1,15 +1,9 @@
 import Headshot from "../images/dummy-headshot.jpg"
 
-export const userProfileAPI = {
-    userId: "fe3234jk3l2",
-    firstName: "Katherine",
-    lastName: "Johnson",
-    profilePhoto: Headshot
-}
 
 export const initialGamesScheduled =
-    [                {
-        gameAdmin: "Jeilani",
+    [{
+        gameAdmin: "fsdakjfasfsdk23r2",
         date: new Date (2020, 9, 1),
         lat: 37.75415835698726,
         lng: -122.44709014892578,
@@ -19,10 +13,11 @@ export const initialGamesScheduled =
         types: ["park", "point_of_interest", "establishment"],
         website: "https://sfrecpark.org/Facilities/Facility/Details/Twin-Peaks-384",
         sport: "Basketball",
-        friendsInvited: []
+        friendsInvited: [],
+        openForInvite: true
     },
     {
-        gameAdmin: "Jeilani",
+        gameAdmin: "fsdakjfkasfsaddf23r2",
         date: new Date (2020, 9, 2),
         lat: 37.769629187677005,
         lng: -122.4862289428711,
@@ -32,18 +27,35 @@ export const initialGamesScheduled =
         types: ["park", "tourist_attraction", "point_of_interest", "establishment"],
         website: "http://sfrecpark.org/parks-open-spaces/golden-gate-park-guide/",
         sport: "Football",
-        friendsInvited: []
+        friendsInvited: [],
+        openForInvite: true
 }
 ]
-
-export const friends = [{
-    userId: "325jkjn23432",
-    firstName: "Kobe",
-    lastName: "Bryant"
-}]
-
 // 20200809141107
 // https://randomuser.me/api/?results=12&nat=us
+
+export const userProfileAPI = {
+  gender: "female",
+  login: {
+    uuid: "fsdakjfk23r2",
+    username: "KatherineJohnson32"
+  },
+  name: {
+    title: "Ms",
+    first: "Katherine",
+    last: "Johnson"
+  },
+  picture: {
+    large: Headshot
+  },
+  location: {
+    city: "Denver",
+    state: "Colorado",
+    country: "United States",
+    post: 80019
+  },
+  gamesScheduled: initialGamesScheduled
+}
 
 export const friendsAPI =  [
       {

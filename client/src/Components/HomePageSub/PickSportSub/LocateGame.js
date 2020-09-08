@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { setSelectedPark } from "../../../actions"
 import Sidebar from "./LocateGameSub/Sidebar"
 import ConfirmationPage from "./LocateGameSub/ConfirmationPage"
+import MarkerPopUp from "./LocateGameSub/MarkerPopUp"
 
 const places = ["places"];
 
@@ -39,12 +40,13 @@ const LocateGame = () => {
   const gamesScheduled = useSelector(state=>state.gamesScheduled)
   const isMapConfirmation = useSelector(state=>state.isMapConfirmation)
   const whichMapDate = useSelector(state=>state.whichMapDate)
+  const [markerInfo, setMarkerInfo] = useState(null)
+  const [isMarkerClicked, setIsMarkerClicked] = useState(false)
   const [map, setMap] = useState(null)
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY,
     libraries: places,
   });
-
 
   const relocate = () => {
     navigator.geolocation.getCurrentPosition(position=>{
@@ -151,6 +153,7 @@ const LocateGame = () => {
           origin: new window.google.maps.Point(0,0),
           anchor: new window.google.maps.Point(15, 15)
       }}
+      onClick={()=>{setMarkerInfo(marker); setIsMarkerClicked(true)}}
       />)
     })} else {
        return gamesScheduled.filter(game=>game.date.getDate() === whichMapDate.getDate()?true:null).map(marker => {
@@ -185,6 +188,7 @@ const LocateGame = () => {
                     origin: new window.google.maps.Point(0,0),
                     anchor: new window.google.maps.Point(15, 15)
                 }}
+                onClick={()=>{setMarkerInfo(marker); setIsMarkerClicked(true)}}
                 />)
       })
 
@@ -209,6 +213,7 @@ const LocateGame = () => {
             </GoogleMap>
             <i onClick={goBack} className="backarrow fas fa-2x fa-arrow-left"></i>
             {isMapConfirmation?<ConfirmationPage/>:null}
+            {isMarkerClicked?<MarkerPopUp setIsMarkerClicked={setIsMarkerClicked} markerInfo={markerInfo} setMarkerInfo={setMarkerInfo}/>:null}
             </div>
           )
 }

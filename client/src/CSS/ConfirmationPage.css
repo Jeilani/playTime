@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
     overflow-y: scroll;
+    z-index: 30;
 }
     .mapconfirmationcontainer .fa-times-circle{
         position: absolute;
@@ -33,6 +34,11 @@
         position: relative;
         overflow-y: scroll;
     }
+        .confirmationpopup .fa-check{
+            color: green;
+            font-size: 2rem;
+        }
+        
     .confirmationpopupfriends{
         background-color: white;
         display: flex;

@@ -10,10 +10,11 @@ const ThirdConfirmation = ({setWhichConfirmation, isInvitingFriends, setIsInviti
     const selectedPark = useSelector(state=>state.selectedPark)
     const whichMapDate = useSelector(state=>state.whichMapDate)
     const friendsList = useSelector(state=>state.friendsList)
+    const currentUserID = useSelector(state=>state.currentUser.login.uuid)
     const addGames = parkObject =>{
       const newObject = {
           ...parkObject,
-          gameAdmin: "Jeilani",
+          gameAdmin: currentUserID,
           usersAttending: ["Kobe", "LeBron", "Michael"],
           sport: sportPicked,
           friendsInvited,
@@ -28,7 +29,8 @@ const ThirdConfirmation = ({setWhichConfirmation, isInvitingFriends, setIsInviti
           ...selectedPark,
           date: new Date(whichMapDate.getFullYear(), whichMapDate.getMonth(), whichMapDate.getDate(), hour, min),
           gameID,
-          friendsInvited: []
+          friendsInvited: [],
+          openForInvite: true
         }
 
         setWhichConfirmation("third")

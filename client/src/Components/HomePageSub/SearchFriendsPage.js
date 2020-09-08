@@ -1,10 +1,11 @@
 import React, {useState} from "react"
-import {useSelector} from "react-redux"
+import {useSelector, useDispatch} from "react-redux"
 import "../../CSS/SearchFriendsPage.css"
 
 const SearchFriendPage = () => {
     const [searchValue, setSearchValue] = useState("")
     const friendsList = useSelector(state=>state.friendsList)
+    const dispatch = useDispatch()
     const onSearchChange = event => {
         setSearchValue(event.target.value)
     }
@@ -14,7 +15,7 @@ const SearchFriendPage = () => {
 
     const searchResults = friendsList.filter(friend=>(friend.name.first.indexOf(searchValue) !== -1) || (friend.name.last.indexOf(searchValue) !== -1)).map(friend=>{
         return (
-        <div className="individualresults"><img alt="friend" src={friend.picture.large}></img><span>{friend.name.first} {friend.name.last}</span></div>
+        <div onClick={()=>{dispatch({type: "CHANGE_USER", payload:friend}); dispatch({type:"SWITCH_TO_USER_PAGE"})}} className="individualresults"><img alt="friend" src={friend.picture.large}></img><span>{friend.name.first} {friend.name.last}</span></div>
             )
     })
 
